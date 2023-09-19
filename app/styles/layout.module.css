@@ -2,38 +2,21 @@
   display: grid;
   grid-template-areas:
     'nav'
-    'header'
-    'main'
-    'footer';
-  grid-template-rows: auto auto 1fr 36px;
+    'main';
+  grid-template-rows: 200px 800px;
   align-items: center;
   min-height: 100vh;
-}
-
-.logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.header {
-  grid-area: header;
 }
 
 .main {
   grid-area: main;
 }
 
-.header,
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.footer {
-  grid-area: footer;
-  justify-self: center;
 }
 
 .nav {
@@ -52,26 +35,11 @@
 
 .link {
   color: #704cb6;
+  cursor: pointer;
+  margin: 0 8px;
 }
 
 .link.active {
   text-decoration: underline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-float infinite 3s ease-in-out;
-  }
-}
-
-@keyframes logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}

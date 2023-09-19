@@ -1,8 +1,8 @@
 /* Components */
-import { Counter } from './components/Counter/Counter'
+import { Generator } from './components/Generator/Generator'
 
 export default function IndexPage() {
-  return <Counter />
+  return <Generator />
 }
 
 export const metadata = {

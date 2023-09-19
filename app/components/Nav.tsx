@@ -16,15 +16,15 @@ export const Nav = () => {
         className={`${styles.link} ${pathname === '/' ? styles.active : ''}`}
         href="/"
       >
-        Home
+        Generator
       </Link>
       <Link
         className={`${styles.link} ${
-          pathname === '/verify' ? styles.active : ''
+          pathname === '/history' ? styles.active : ''
         }`}
-        href="/verify"
+        href="/history"
       >
-        Verify
+        History
       </Link>
     </nav>
   )
