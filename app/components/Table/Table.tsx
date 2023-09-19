@@ -26,12 +26,30 @@ export const Table = () => {
 
     const sortByTimestamp = () => {
         setTimestampSort(!timestampSort)
-        setArrOfGeneratedNumbers(arrOfGeneratedNumbers.reverse())
+        let sortedArr = []
+        if (timestampSort) {
+            sortedArr = arrOfGeneratedNumbers.sort((a, b) => {
+                const dateA = new Date(a.timestamp.replace(/(\d{2}).(\d{2}).(\d{4}) (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5:00'));
+                const dateB = new Date(b.timestamp.replace(/(\d{2}).(\d{2}).(\d{4}) (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5:00'));
+                return dateA - dateB;
+            });
+        } else {
+            sortedArr = arrOfGeneratedNumbers.sort((a, b) => {
+                const dateA = new Date(a.timestamp.replace(/(\d{2}).(\d{2}).(\d{4}) (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5:00'));
+                const dateB = new Date(b.timestamp.replace(/(\d{2}).(\d{2}).(\d{4}) (\d{2}):(\d{2})/, '$3-$2-$1T$4:$5:00'));
+                return dateB - dateA;
+            });
+        }
+        setArrOfGeneratedNumbers(sortedArr)
     }
 
     const sortByNumber = () => {
         setNumberSort(!numberSort)
-        setArrOfGeneratedNumbers(arrOfGeneratedNumbers.sort((a, b) => a.value - b.value))
+        if (numberSort) {
+            setArrOfGeneratedNumbers(arrOfGeneratedNumbers.sort((a, b) => a.value - b.value))
+        } else {
+            setArrOfGeneratedNumbers(arrOfGeneratedNumbers.sort((a, b) => b.value - a.value))
+        }
     }
 
     const textSearch = (e) => {
