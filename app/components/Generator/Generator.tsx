@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 /* Instruments */
 import {
-  counterSlice,
+  randomNumberSlice,
   useSelector,
   useDispatch,
   selectCount,
@@ -25,7 +25,7 @@ export const Counter = () => {
         <button
           className={styles.button}
           aria-label="Decrement value"
-          onClick={() => dispatch(counterSlice.actions.decrement())}
+          onClick={() => dispatch(randomNumberSlice.actions.decrement())}
         >
           -
         </button>
@@ -33,7 +33,7 @@ export const Counter = () => {
         <button
           className={styles.button}
           aria-label="Increment value"
-          onClick={() => dispatch(counterSlice.actions.increment())}
+          onClick={() => dispatch(randomNumberSlice.actions.increment())}
         >
           +
         </button>
@@ -48,7 +48,7 @@ export const Counter = () => {
         <button
           className={styles.button}
           onClick={() =>
-            dispatch(counterSlice.actions.incrementByAmount(incrementAmount))
+            dispatch(randomNumberSlice.actions.incrementByAmount(incrementAmount))
           }
         >
           Add Amount
